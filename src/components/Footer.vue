@@ -1,48 +1,65 @@
 <template>
   <div class="container-fluid text-center mt-3">
-    <router-link v-if="isActivated && isNetworkSupported" to="/profile">Profile</router-link>
-    
+    <router-link v-if="isActivated && isNetworkSupported" to="/profile"
+      >Profile</router-link
+    >
+
     <span v-if="isActivated && isNetworkSupported"> | </span>
 
     <router-link to="/about">About</router-link><span> | </span>
 
-    <router-link v-if="isUserMinterAdmin || isUserRoyaltyFeeUpdater || isUserTldAdmin" to="/admin">Admin</router-link>
-    <span v-if="isUserMinterAdmin || isUserRoyaltyFeeUpdater || isUserTldAdmin"> | </span>
+    <router-link
+      v-if="isUserMinterAdmin || isUserRoyaltyFeeUpdater || isUserTldAdmin"
+      to="/admin"
+      >Admin</router-link
+    >
+    <span v-if="isUserMinterAdmin || isUserRoyaltyFeeUpdater || isUserTldAdmin">
+      |
+    </span>
 
-    <a target="_blank" href="https://punk.domains">Powered by Punk Domains</a>
+    <a target="_blank" href="https://wavydawgs.com/">Wavy Dawgs</a>
   </div>
 
   <div class="container-fluid text-center">
+    <a class="icons" href="https://docs.punk.domains" target="_blank"
+      ><i class="bi bi-journal-text"></i
+    ></a>
 
-    <a class="icons" href="https://docs.punk.domains" target="_blank"><i class="bi bi-journal-text"></i></a>
+    <a class="icons" target="_blank" href="https://github.com/ppl-domains"
+      ><i class="bi bi-github"></i
+    ></a>
 
-    <a class="icons" target="_blank" href="https://github.com/ppl-domains"><i class="bi bi-github"></i></a>
+    <a class="icons" target="_blank" href="https://discord.gg/CBQFAkP3Fb"
+      ><i class="bi bi-discord"></i
+    ></a>
 
-    <a class="icons" target="_blank" href="https://discord.gg/CBQFAkP3Fb"><i class="bi bi-discord"></i></a>
-
-    <a class="icons" target="_blank" href="https://twitter.com/joiedegarlic"><i class="bi bi-twitter"></i></a>
-    
+    <a class="icons" target="_blank" href="https://twitter.com/joiedegarlic"
+      ><i class="bi bi-twitter"></i
+    ></a>
   </div>
 </template>
 
 <script>
-import { useEthers } from 'vue-dapp';
-import { mapGetters } from 'vuex';
+import { useEthers } from "vue-dapp";
+import { mapGetters } from "vuex";
 
 export default {
   name: "Footer",
 
   computed: {
     ...mapGetters("network", ["isNetworkSupported"]),
-    ...mapGetters("user", ["isUserMinterAdmin", "isUserTldAdmin", "isUserRoyaltyFeeUpdater"]),
-    
+    ...mapGetters("user", [
+      "isUserMinterAdmin",
+      "isUserTldAdmin",
+      "isUserRoyaltyFeeUpdater",
+    ]),
   },
 
   setup() {
-    const { isActivated } = useEthers()
-    return { isActivated }
+    const { isActivated } = useEthers();
+    return { isActivated };
   },
-}
+};
 </script>
 
 <style scoped>
@@ -73,7 +90,7 @@ a:hover {
 }
 
 .polygon svg circle {
-  fill: #DBDFEA;
+  fill: #dbdfea;
 }
 
 .polygon:hover svg circle {
