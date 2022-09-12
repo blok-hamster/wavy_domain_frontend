@@ -8,7 +8,7 @@
           width="30"
           class="d-inline-block align-bottom navbar-img"
         />
-        People Domains
+        Wavy Dawgs
       </router-link>
 
       <button
