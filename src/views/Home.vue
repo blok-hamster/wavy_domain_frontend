@@ -58,9 +58,7 @@
       :disabled="
         waiting || buyNotValid(chosenDomainName).invalid || !hasUserEnoughTokens
       "
-    >
-      <span>You need to own all three Dishes NFTs</span>
-    </button>
+    ></button>
 
     <!-- Too low ETH balance -->
     <button
